@@ -101,7 +101,7 @@ static class DeploymentController
 		//Calculate the row/col clicked
 		int row = 0;
 		int col = 0;
-		row = Convert.ToInt32(Math.Floor((mouse.Y) / (UtilityFunctions.CELL_HEIGHT + UtilityFunctions.CELL_GAP)));
+		row = Convert.ToInt32(Math.Floor((mouse.Y- UtilityFunctions.FIELD_TOP) / (UtilityFunctions.CELL_HEIGHT + UtilityFunctions.CELL_GAP)));
 		col = Convert.ToInt32(Math.Floor((mouse.X - UtilityFunctions.FIELD_LEFT) / (UtilityFunctions.CELL_WIDTH + UtilityFunctions.CELL_GAP)));
 
 		if (row >= 0 & row < GameController.HumanPlayer.PlayerGrid.Height) {
@@ -128,12 +128,12 @@ static class DeploymentController
 		//Draw the Left/Right and Up/Down buttons
 		if (_currentDirection == Direction.LeftRight) {
 			SwinGame.DrawBitmap(GameResources.GameImage("LeftRightButton"), LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP);
-			//SwinGame.DrawText("U/D", Color.Gray, GameFont("Menu"), UP_DOWN_BUTTON_LEFT, TOP_BUTTONS_TOP)
-			//SwinGame.DrawText("L/R", Color.White, GameFont("Menu"), LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP)
+			//SwinGame.DrawText ("U/D", Color.Gray, GameResources.GameFont ("Menu"), UP_DOWN_BUTTON_LEFT, TOP_BUTTONS_TOP);
+			//SwinGame.DrawText ("L/R", Color.White, GameResources.GameFont ("Menu"), LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP);
 		} else {
 			SwinGame.DrawBitmap(GameResources.GameImage("UpDownButton"), LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP);
-			//SwinGame.DrawText("U/D", Color.White, GameFont("Menu"), UP_DOWN_BUTTON_LEFT, TOP_BUTTONS_TOP)
-			//SwinGame.DrawText("L/R", Color.Gray, GameFont("Menu"), LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP)
+			//SwinGame.DrawText ("U/D", Color.White, GameResources.GameFont ("Menu"), UP_DOWN_BUTTON_LEFT, TOP_BUTTONS_TOP);
+			//SwinGame.DrawText ("L/R", Color.Gray, GameResources.GameFont ("Menu"), LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP);
 		}
 
 		//DrawShips
