@@ -392,6 +392,10 @@ public static class GameController
 		_aiSetting = setting;
 	}
 
+	public static AIOption getDifficutly(){
+		return _aiSetting;
+	}
+
 }
 
 //=======================================================
