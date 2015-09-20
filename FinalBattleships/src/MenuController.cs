@@ -165,7 +165,7 @@ static class MenuController
 	public static void DrawSettings()
 	{
 		//Clears the Screen to Black
-		SwinGame.DrawText("Settings", Color.White, GameResources.GameFont("ArialLarge"), 50, 50);
+		//SwinGame.DrawText("Settings", Color.White, GameResources.GameFont("ArialLarge"), 50, 50);
 
 		DrawButtons(MAIN_MENU);
 		DrawButtons (SETUP_MENU, 1, 1);
