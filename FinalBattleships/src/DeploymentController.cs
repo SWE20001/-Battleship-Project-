@@ -110,11 +110,13 @@ static class DeploymentController
 
 				int lastRow = GameController.HumanPlayer.Ship (_selectedShip).Row;
 				int lastCol = GameController.HumanPlayer.Ship (_selectedShip).Column;
+				Direction lastDirection = GameController.HumanPlayer.Ship (_selectedShip).Direction;
+
 				try {
 					GameController.HumanPlayer.PlayerGrid.MoveShip(row, col, _selectedShip, _currentDirection);
 				} catch (Exception ex) {
 					Audio.PlaySoundEffect(GameResources.GameSound("Error"));
-					GameController.HumanPlayer.PlayerGrid.MoveShip(lastRow, lastCol, _selectedShip, _currentDirection);
+					GameController.HumanPlayer.PlayerGrid.MoveShip(lastRow, lastCol, _selectedShip, lastDirection);
 					UtilityFunctions.Message = ex.Message;
 				}
 			}
