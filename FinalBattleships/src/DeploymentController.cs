@@ -107,10 +107,14 @@ static class DeploymentController
 		if (row >= 0 & row < GameController.HumanPlayer.PlayerGrid.Height) {
 			if (col >= 0 & col < GameController.HumanPlayer.PlayerGrid.Width) {
 				//if in the area try to deploy
+
+				int lastRow = GameController.HumanPlayer.Ship (_selectedShip).Row;
+				int lastCol = GameController.HumanPlayer.Ship (_selectedShip).Column;
 				try {
 					GameController.HumanPlayer.PlayerGrid.MoveShip(row, col, _selectedShip, _currentDirection);
 				} catch (Exception ex) {
 					Audio.PlaySoundEffect(GameResources.GameSound("Error"));
+					GameController.HumanPlayer.PlayerGrid.MoveShip(lastRow, lastCol, _selectedShip, _currentDirection);
 					UtilityFunctions.Message = ex.Message;
 				}
 			}

@@ -1,8 +1,19 @@
 ﻿<Properties StartupItem="MyGame.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug-Windows|x86" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="src\GameController.cs">
+    <Files>
+      <File FileName="src\MenuController.cs" Line="1" Column="1" />
+      <File FileName="src\GameController.cs" Line="73" Column="30" />
+      <File FileName="src\Model\AIHardPlayer.cs" Line="1" Column="1" />
+      <File FileName="src\Model\AIMediumPlayer.cs" Line="1" Column="1" />
+      <File FileName="src\Model\AIOption.cs" Line="1" Column="1" />
+      <File FileName="src\Model\AIPlayer.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="D:\IT\SWIN\ICT\Sem2\DevelopmentProject1ToolsAndPractices\LabTask\TaskBattleShip\GitHub\-Battleship-Project-\FinalBattleships\src\GameController.cs" line="90" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
