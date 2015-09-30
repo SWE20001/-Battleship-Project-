@@ -2,6 +2,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug-Windows|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="src\DeploymentController.cs">
     <Files>
+<<<<<<< HEAD
       <File FileName="src\MenuController.cs" Line="1" Column="1" />
       <File FileName="src\GameController.cs" Line="74" Column="3" />
       <File FileName="src\Model\AIHardPlayer.cs" Line="1" Column="1" />
@@ -13,6 +14,11 @@
       <File FileName="src\Model\SeaGrid.cs" Line="1" Column="1" />
       <File FileName="src\Model\Player.cs" Line="92" Column="18" />
       <File FileName="src\Model\Ship.cs" Line="22" Column="18" />
+=======
+      <File FileName="src\DeploymentController.cs" Line="127" Column="61" />
+      <File FileName="src\GameResources.cs" Line="91" Column="47" />
+      <File FileName="src\HighScoreController.cs" Line="125" Column="72" />
+>>>>>>> add_back_button
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

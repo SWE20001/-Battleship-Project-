@@ -94,6 +94,7 @@ C:\Users\Kirat\Downloads\The-real-one_0909\The real one\bin\Debug\MyGame.exe
 C:\Users\Kirat\Downloads\The-real-one_0909\The real one\bin\Debug\SwinGame.dll
 C:\Users\Kirat\Downloads\The-real-one_0909\The real one\obj\x86\Debug-Windows\MyGame.csprojResolveAssemblyReference.cache
 C:\Users\Kirat\Downloads\The-real-one_0909\The real one\obj\x86\Debug-Windows\MyGame.exe
+<<<<<<< HEAD
 D:\IT\SWIN\ICT\Sem2\DevelopmentProject1ToolsAndPractices\LabTask\TaskBattleShip\GitHub\-Battleship-Project-\FinalBattleships\bin\Debug\Resources\animations\startup.txt
 D:\IT\SWIN\ICT\Sem2\DevelopmentProject1ToolsAndPractices\LabTask\TaskBattleShip\GitHub\-Battleship-Project-\FinalBattleships\bin\Debug\Resources\bundles\FileDialog.txt
 D:\IT\SWIN\ICT\Sem2\DevelopmentProject1ToolsAndPractices\LabTask\TaskBattleShip\GitHub\-Battleship-Project-\FinalBattleships\bin\Debug\Resources\bundles\splash.txt
@@ -118,3 +119,29 @@ D:\IT\SWIN\ICT\Sem2\DevelopmentProject1ToolsAndPractices\LabTask\TaskBattleShip\
 D:\IT\SWIN\ICT\Sem2\DevelopmentProject1ToolsAndPractices\LabTask\TaskBattleShip\GitHub\-Battleship-Project-\FinalBattleships\bin\Debug\SwinGame.dll
 D:\IT\SWIN\ICT\Sem2\DevelopmentProject1ToolsAndPractices\LabTask\TaskBattleShip\GitHub\-Battleship-Project-\FinalBattleships\obj\x86\Debug-Windows\MyGame.csprojResolveAssemblyReference.cache
 D:\IT\SWIN\ICT\Sem2\DevelopmentProject1ToolsAndPractices\LabTask\TaskBattleShip\GitHub\-Battleship-Project-\FinalBattleships\obj\x86\Debug-Windows\MyGame.exe
+=======
+C:\Users\Kirat\Desktop\project\-Battleship-Project-\FinalBattleships\obj\x86\Debug-Windows\MyGame.csprojResolveAssemblyReference.cache
+C:\Users\Kirat\Desktop\project\-Battleship-Project-\FinalBattleships\obj\x86\Debug-Windows\MyGame.exe
+C:\Users\Kirat\Desktop\project\-Battleship-Project-\FinalBattleships\bin\Debug\Resources\animations\startup.txt
+C:\Users\Kirat\Desktop\project\-Battleship-Project-\FinalBattleships\bin\Debug\Resources\bundles\FileDialog.txt
+C:\Users\Kirat\Desktop\project\-Battleship-Project-\FinalBattleships\bin\Debug\Resources\bundles\splash.txt
+C:\Users\Kirat\Desktop\project\-Battleship-Project-\FinalBattleships\bin\Debug\Resources\fonts\arial.ttf
+C:\Users\Kirat\Desktop\project\-Battleship-Project-\FinalBattleships\bin\Debug\Resources\fonts\cour.ttf
+C:\Users\Kirat\Desktop\project\-Battleship-Project-\FinalBattleships\bin\Debug\Resources\fonts\maven_pro_regular.ttf
+C:\Users\Kirat\Desktop\project\-Battleship-Project-\FinalBattleships\bin\Debug\Resources\images\fdFile.png
+C:\Users\Kirat\Desktop\project\-Battleship-Project-\FinalBattleships\bin\Debug\Resources\images\fdFolder.png
+C:\Users\Kirat\Desktop\project\-Battleship-Project-\FinalBattleships\bin\Debug\Resources\images\FileDialog_Active.png
+C:\Users\Kirat\Desktop\project\-Battleship-Project-\FinalBattleships\bin\Debug\Resources\images\FileDialog_Background.png
+C:\Users\Kirat\Desktop\project\-Battleship-Project-\FinalBattleships\bin\Debug\Resources\images\FileDialog_Inactive.png
+C:\Users\Kirat\Desktop\project\-Battleship-Project-\FinalBattleships\bin\Debug\Resources\images\FileDialog_Scroll.png
+C:\Users\Kirat\Desktop\project\-Battleship-Project-\FinalBattleships\bin\Debug\Resources\images\FileDialog_ScrollSmall.png
+C:\Users\Kirat\Desktop\project\-Battleship-Project-\FinalBattleships\bin\Debug\Resources\images\Swinburne.jpg
+C:\Users\Kirat\Desktop\project\-Battleship-Project-\FinalBattleships\bin\Debug\Resources\images\SwinGameAni.png
+C:\Users\Kirat\Desktop\project\-Battleship-Project-\FinalBattleships\bin\Debug\Resources\panels\FileDialog.txt
+C:\Users\Kirat\Desktop\project\-Battleship-Project-\FinalBattleships\bin\Debug\Resources\sounds\error.wav
+C:\Users\Kirat\Desktop\project\-Battleship-Project-\FinalBattleships\bin\Debug\Resources\sounds\SwinGameStart.wav
+C:\Users\Kirat\Desktop\project\-Battleship-Project-\FinalBattleships\bin\Debug\Resources\SwinGame.icns
+C:\Users\Kirat\Desktop\project\-Battleship-Project-\FinalBattleships\bin\Debug\Resources\SwinGame.ico
+C:\Users\Kirat\Desktop\project\-Battleship-Project-\FinalBattleships\bin\Debug\MyGame.exe
+C:\Users\Kirat\Desktop\project\-Battleship-Project-\FinalBattleships\bin\Debug\SwinGame.dll
+>>>>>>> add_back_button

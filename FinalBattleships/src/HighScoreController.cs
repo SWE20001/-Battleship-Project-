@@ -19,6 +19,9 @@ static class HighScoreController
 	private const int NAME_WIDTH = 3;
 
 	private const int SCORES_LEFT = 490;
+
+	private const int BACK_BUTTON_HEIGHT = 20;
+	private const int BACK_BUTTON_LEFT = 700;
 	/// <summary>
 	/// The score structure is used to keep the name and
 	/// score of the top players together.
@@ -122,9 +125,12 @@ static class HighScoreController
 		const int SCORES_HEADING = 40;
 		const int SCORES_TOP = 80;
 		const int SCORE_GAP = 30;
+		SwinGame.DrawBitmap (GameResources.GameImage ("back_button"), BACK_BUTTON_LEFT,BACK_BUTTON_HEIGHT);
 
 		if (_Scores.Count == 0)
 			LoadScores();
+
+
 
 		SwinGame.DrawText("   High Scores   ", Color.White, GameResources.GameFont("Courier"), SCORES_LEFT, SCORES_HEADING);
 
@@ -150,7 +156,7 @@ static class HighScoreController
 	/// <remarks></remarks>
 	public static void HandleHighScoreInput()
 	{
-		if (SwinGame.MouseClicked(MouseButton.LeftButton) || SwinGame.KeyTyped(KeyCode.vk_ESCAPE) || SwinGame.KeyTyped(KeyCode.vk_RETURN)) {
+		if (SwinGame.KeyTyped(KeyCode.vk_b) || SwinGame.KeyTyped(KeyCode.vk_ESCAPE) || SwinGame.KeyTyped(KeyCode.vk_RETURN) || (SwinGame.MouseClicked(MouseButton.LeftButton)&&UtilityFunctions.IsMouseInRectangle (BACK_BUTTON_LEFT,BACK_BUTTON_HEIGHT, 87,36))) {
 			GameController.EndCurrentState();
 		}
 	}
