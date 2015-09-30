@@ -33,6 +33,9 @@ static class DeploymentController
 
 	private const int DIR_BUTTONS_WIDTH = 47;
 
+	private const int BACK_BUTTON_HEIGHT = 20;
+	private const int BACK_BUTTON_LEFT = 700;
+
 	private const int TEXT_OFFSET = 5;
 	private static Direction _currentDirection = Direction.UpDown;
 
@@ -72,16 +75,28 @@ static class DeploymentController
 				DoDeployClick();
 			}
 
-			if (GameController.HumanPlayer.ReadyToDeploy & UtilityFunctions.IsMouseInRectangle(PLAY_BUTTON_LEFT, TOP_BUTTONS_TOP, PLAY_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT)) {
-				GameController.EndDeployment();
-			} else if (UtilityFunctions.IsMouseInRectangle(UP_DOWN_BUTTON_LEFT, TOP_BUTTONS_TOP, DIR_BUTTONS_WIDTH, TOP_BUTTONS_HEIGHT)) {
+			if (GameController.HumanPlayer.ReadyToDeploy & UtilityFunctions.IsMouseInRectangle (PLAY_BUTTON_LEFT, TOP_BUTTONS_TOP, PLAY_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT))
+			{
+				GameController.EndDeployment ();
+			}
+			else if (UtilityFunctions.IsMouseInRectangle (UP_DOWN_BUTTON_LEFT, TOP_BUTTONS_TOP, DIR_BUTTONS_WIDTH, TOP_BUTTONS_HEIGHT))
+			{
 				_currentDirection = Direction.UpDown;
-			} else if (UtilityFunctions.IsMouseInRectangle(LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP, DIR_BUTTONS_WIDTH, TOP_BUTTONS_HEIGHT)) {
+			}
+			else if (UtilityFunctions.IsMouseInRectangle (LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP, DIR_BUTTONS_WIDTH, TOP_BUTTONS_HEIGHT))
+			{
 				_currentDirection = Direction.LeftRight;
-			} else if (UtilityFunctions.IsMouseInRectangle(RANDOM_BUTTON_LEFT, TOP_BUTTONS_TOP, RANDOM_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT)) {
-				GameController.HumanPlayer.RandomizeDeployment();
+			}
+			else if (UtilityFunctions.IsMouseInRectangle (RANDOM_BUTTON_LEFT, TOP_BUTTONS_TOP, RANDOM_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT))
+			{
+				GameController.HumanPlayer.RandomizeDeployment ();
+			}
+			else if (UtilityFunctions.IsMouseInRectangle (BACK_BUTTON_LEFT,BACK_BUTTON_HEIGHT, 87,36))
+			{
+				GameController.EndCurrentState();
 			}
 		}
+
 	}
 
 	/// <summary>
@@ -125,6 +140,7 @@ static class DeploymentController
 	{
 		UtilityFunctions.DrawField(GameController.HumanPlayer.PlayerGrid, GameController.HumanPlayer, true);
 
+
 		//Draw the Left/Right and Up/Down buttons
 		if (_currentDirection == Direction.LeftRight) {
 			SwinGame.DrawBitmap(GameResources.GameImage("LeftRightButton"), LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP);
@@ -161,7 +177,7 @@ static class DeploymentController
 		}
 
 		SwinGame.DrawBitmap(GameResources.GameImage("RandomButton"), RANDOM_BUTTON_LEFT, TOP_BUTTONS_TOP);
-
+		SwinGame.DrawBitmap (GameResources.GameImage ("back_button"), BACK_BUTTON_LEFT,BACK_BUTTON_HEIGHT);
 		UtilityFunctions.DrawMessage();
 	}
 

@@ -1,6 +1,12 @@
 ﻿<Properties StartupItem="MyGame.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug-Windows|x86" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="src\DeploymentController.cs">
+    <Files>
+      <File FileName="src\DeploymentController.cs" Line="127" Column="61" />
+      <File FileName="src\GameResources.cs" Line="91" Column="47" />
+      <File FileName="src\HighScoreController.cs" Line="125" Column="72" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
