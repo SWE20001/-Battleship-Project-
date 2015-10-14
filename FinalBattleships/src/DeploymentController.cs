@@ -8,20 +8,21 @@ using System.Diagnostics;
 using SwinGameSDK;
 
 /// <summary>
-/// The DeploymentController controls the players actions
-/// during the deployment phase.
+/// Deployment controller.
 /// </summary>
-static class DeploymentController
+static class DeploymentController	
+													/* controls the players actions
+													   during the deployment phase*/
 {
-	private const int SHIPS_TOP = 98;
+	private const int SHIPS_TOP = 98;						
 	private const int SHIPS_LEFT = 20;
-	private const int SHIPS_HEIGHT = 90;
+	private const int SHIPS_HEIGHT = 90;					
 
 	private const int SHIPS_WIDTH = 300;
 	private const int TOP_BUTTONS_TOP = 72;
 
 	private const int TOP_BUTTONS_HEIGHT = 46;
-	private const int PLAY_BUTTON_LEFT = 693;
+	private const int PLAY_BUTTON_LEFT = 693;			/*defing the item name of the Deployment Controller */
 
 	private const int PLAY_BUTTON_WIDTH = 80;
 	private const int UP_DOWN_BUTTON_LEFT = 410;
@@ -42,14 +43,12 @@ static class DeploymentController
 	private static ShipName _selectedShip = ShipName.Tug;
 	
 	/// <summary>
-	/// Handles user input for the Deployment phase of the game.
+	/// Handles the deployment input.
 	/// </summary>
-	/// <remarks>
-	/// Involves selecting the ships, deloying ships, changing the direction
-	/// of the ships to add, randomising deployment, end then ending
-	/// deployment
-	/// </remarks>
 	public static void HandleDeploymentInput()
+																  /*Handles user input for the Deployment phase of the game.
+																  Involves selecting the ships, deloying ships, changing the direction,
+																  of the ships to add, randomising deployment, and then ending deployment.*/		
 	{
 		if (SwinGame.KeyTyped(KeyCode.vk_ESCAPE)) {
 			GameController.AddNewState(GameState.ViewingGameMenu);
@@ -113,7 +112,7 @@ static class DeploymentController
 
 		mouse = SwinGame.MousePosition();
 
-		//Calculate the row/col clicked
+																			/* Calculate the row/col clicked*/
 		int row = 0;
 		int col = 0;
 		row = Convert.ToInt32(Math.Floor((mouse.Y- UtilityFunctions.FIELD_TOP) / (UtilityFunctions.CELL_HEIGHT + UtilityFunctions.CELL_GAP)));
@@ -121,7 +120,7 @@ static class DeploymentController
 
 		if (row >= 0 & row < GameController.HumanPlayer.PlayerGrid.Height) {
 			if (col >= 0 & col < GameController.HumanPlayer.PlayerGrid.Width) {
-				//if in the area try to deploy
+																				/* if in the area try to deploy*/
 
 				int lastRow = GameController.HumanPlayer.Ship (_selectedShip).Row;
 				int lastCol = GameController.HumanPlayer.Ship (_selectedShip).Column;
@@ -147,7 +146,7 @@ static class DeploymentController
 		UtilityFunctions.DrawField(GameController.HumanPlayer.PlayerGrid, GameController.HumanPlayer, true);
 
 
-		//Draw the Left/Right and Up/Down buttons
+																		/* Draw the Left/Right and Up/Down buttons*/
 		if (_currentDirection == Direction.LeftRight) {
 			SwinGame.DrawBitmap(GameResources.GameImage("LeftRightButton"), LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP);
 			//SwinGame.DrawText ("U/D", Color.Gray, GameResources.GameFont ("Menu"), UP_DOWN_BUTTON_LEFT, TOP_BUTTONS_TOP);
@@ -158,7 +157,7 @@ static class DeploymentController
 			//SwinGame.DrawText ("L/R", Color.Gray, GameResources.GameFont ("Menu"), LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP);
 		}
 
-		//DrawShips
+																					/*DrawShips*/
 		foreach (ShipName sn in Enum.GetValues(typeof(ShipName))) {
 			int i = 0;
 			i = (int)sn - 1;
@@ -193,6 +192,7 @@ static class DeploymentController
 	/// <returns>The ship selected or none</returns>
 	private static ShipName GetShipMouseIsOver()
 	{
+																					
 		foreach (ShipName sn in Enum.GetValues(typeof(ShipName))) {
 			int i = 0;
 			i = (int)sn - 1;
@@ -203,7 +203,7 @@ static class DeploymentController
 		}
 
 		return ShipName.None;
-	}
+	}															/* the ship mouse is over */
 }
 
 //=======================================================

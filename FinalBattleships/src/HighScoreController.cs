@@ -11,11 +11,9 @@ using SwinGameSDK;
 /// <summary>
 /// Controls displaying and collecting high score data.
 /// </summary>
-/// <remarks>
-/// Data is saved to a file.
-/// </remarks>
+
 static class HighScoreController
-{
+{																/*all data will be saved to the file*/
 	private const int NAME_WIDTH = 3;
 
 	private const int SCORES_LEFT = 490;
@@ -23,25 +21,25 @@ static class HighScoreController
 	private const int BACK_BUTTON_HEIGHT = 20;
 	private const int BACK_BUTTON_LEFT = 700;
 	/// <summary>
-	/// The score structure is used to keep the name and
-	/// score of the top players together.
+	/// Score.
 	/// </summary>
 	private struct Score : IComparable
-	{
+	{													/*The score structure is used to keep the name and score of the top players together*/
 		public string Name;
 
 		public int Value;
 		/// <summary>
-		/// Allows scores to be compared to facilitate sorting
+		/// Compares to.
 		/// </summary>
-		/// <param name="obj">the object to compare to</param>
-		/// <returns>a value that indicates the sort order</returns>
+		/// <returns>The to.</returns>
+		/// <param name="obj">Object.</param>
 		public int CompareTo(object obj)
-		{
+		{															/*Allows scores to be compared to facilitate sorting,
+																	 and will return a value that indicates the sort order*/
 			if (obj is Score) {
 				Score other = (Score)obj;
 
-				return other.Value - this.Value;
+				return other.Value - this.Value;							
 			} else {
 				return 0;
 			}
@@ -69,7 +67,7 @@ static class HighScoreController
 		StreamReader input = default(StreamReader);
 		input = new StreamReader(filename);
 
-		//Read in the # of scores
+																			/*Read in the # of scores*/
 		int numScores = 0;
 		numScores = Convert.ToInt32(input.ReadLine());
 
@@ -101,7 +99,7 @@ static class HighScoreController
 	/// Where NNN is the name and SSS is the score
 	/// </remarks>
 	private static void SaveScores()
-	{
+	{														/*saving the new score and the highest one on a file*/
 		string filename = null;
 		filename = SwinGame.PathToResource("highscores.txt");
 
@@ -134,14 +132,14 @@ static class HighScoreController
 
 		SwinGame.DrawText("   High Scores   ", Color.White, GameResources.GameFont("Courier"), SCORES_LEFT, SCORES_HEADING);
 
-		//For all of the scores
+																	/*save For all of the scores*/
 		int i = 0;
 		for (i = 0; i <= _Scores.Count - 1; i++) {
 			Score s = default(Score);
 
 			s = _Scores[i];
 
-			//for scores 1 - 9 use 01 - 09
+																	/* for scores 1 - 9 use 01 - 09 */
 			if (i < 9) {
 				SwinGame.DrawText(" " + (i + 1) + ":   " + s.Name + "   " + s.Value, Color.White, GameResources.GameFont("Courier"), SCORES_LEFT, SCORES_TOP + i * SCORE_GAP);
 			} else {
@@ -151,11 +149,10 @@ static class HighScoreController
 	}
 
 	/// <summary>
-	/// Handles the user input during the top score screen.
+	/// Handles the high score input.
 	/// </summary>
-	/// <remarks></remarks>
 	public static void HandleHighScoreInput()
-	{
+	{															/*Handles the user input during the top score screen*/
 		if (SwinGame.KeyTyped(KeyCode.vk_b) || SwinGame.KeyTyped(KeyCode.vk_ESCAPE) || SwinGame.KeyTyped(KeyCode.vk_RETURN) || (SwinGame.MouseClicked(MouseButton.LeftButton)&&UtilityFunctions.IsMouseInRectangle (BACK_BUTTON_LEFT,BACK_BUTTON_HEIGHT, 87,36))) {
 			GameController.EndCurrentState();
 		}
@@ -175,7 +172,7 @@ static class HighScoreController
 		if (_Scores.Count == 0)
 			LoadScores();
 
-		//is it a high score
+																					/*check if is it a high score */
 		if (value > _Scores[_Scores.Count - 1].Value) {
 			Score s = new Score();
 			s.Value = value;
@@ -187,7 +184,7 @@ static class HighScoreController
 
 			SwinGame.StartReadingText(Color.White, NAME_WIDTH, GameResources.GameFont("Courier"), x, ENTRY_TOP);
 
-			//Read the text from the user
+																				/* Read the text from the user */
 			while (SwinGame.ReadingText()) {
 				SwinGame.ProcessEvents();
 
@@ -203,7 +200,7 @@ static class HighScoreController
 				s.Name = s.Name + new string(Convert.ToChar(" "), 3 - s.Name.Length);
 			}
 
-			_Scores.RemoveAt(_Scores.Count - 1);
+			_Scores.RemoveAt(_Scores.Count - 1);									/*record the score and sort it from highest to lowest one*/
 			_Scores.Add(s);
 			_Scores.Sort();
 			SaveScores ();

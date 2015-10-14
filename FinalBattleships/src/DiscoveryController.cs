@@ -14,13 +14,12 @@ static class DiscoveryController
 {
 
 	/// <summary>
-	/// Handles input during the discovery phase of the game.
+	/// Handles the discovery input.
 	/// </summary>
-	/// <remarks>
-	/// Escape opens the game menu. Clicking the mouse will
-	/// attack a location.
-	/// </remarks>
 	public static void HandleDiscoveryInput()
+																/*Handles input during the discovery phase of the game.
+																 Escape opens the game menu. Clicking the mouse will
+																 attack a location.*/								
 	{
 		if (SwinGame.KeyTyped(KeyCode.vk_ESCAPE)) {
 			GameController.AddNewState(GameState.ViewingGameMenu);
@@ -40,7 +39,7 @@ static class DiscoveryController
 
 		mouse = SwinGame.MousePosition();
 
-		//Calculate the row/col clicked
+																/*Calculate the row/col clicked*/
 		int row = 0;
 		int col = 0;
 		row = Convert.ToInt32(Math.Floor((mouse.Y - UtilityFunctions.FIELD_TOP) / (UtilityFunctions.CELL_HEIGHT + UtilityFunctions.CELL_GAP)));
@@ -59,7 +58,7 @@ static class DiscoveryController
 	public static void DrawDiscovery()
 	{
 		const int SCORES_LEFT = 172;
-		const int SHOTS_TOP = 157;
+		const int SHOTS_TOP = 157;									/*draw phase*/
 		const int HITS_TOP = 206;
 		const int SPLASH_TOP = 256;
 
