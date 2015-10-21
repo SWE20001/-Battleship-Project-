@@ -132,6 +132,21 @@ public class Ship
 		_col = col;
 		_direction = direction;
 	}
+
+	public List<int> getHints(){
+		List<int> output = new List<int>();
+
+		foreach (Tile t in _tiles)
+		{
+			if (!t.Shot)
+			{
+				output.Add(t.Row);
+				output.Add(t.Column);
+				break;
+			}
+		}
+		return output;
+	}
 }
 
 //=======================================================

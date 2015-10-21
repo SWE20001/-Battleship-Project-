@@ -196,6 +196,21 @@ public class Player : IEnumerable<Ship>
 		return result;
 	}
 
+	public List<int> getHint(){
+		List<int> result  = new List<int>();
+
+		foreach (KeyValuePair<ShipName, Ship> pair in _Ships)
+		{
+			if (pair.Value.getHints ().Count > 0)
+			{
+				result = pair.Value.getHints ();
+				break;
+			}
+		}
+			
+			return result;	
+	}
+
 	public virtual void RandomizeDeployment()
 	{
 		bool placementSuccessful = false;

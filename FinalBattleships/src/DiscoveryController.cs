@@ -13,12 +13,19 @@ using SwinGameSDK;
 static class DiscoveryController
 {
 
+	public static int hintsBtnLeft = 700;
+	public static int hintsBtnTop = 20;
+	public static int hintsBtnWidth = 64;
+	public static int hintsBtnHeight = 64;
+	public static int hintY = 0;
+	public static int hintX = 0;
+	public static bool hasHint = false;
+
 	/// <summary>
 	/// Handles the discovery input.
 	/// </summary>
 	public static void HandleDiscoveryInput()
-																/*Handles input during the discovery phase of the game.
-																 Escape opens the game menu. Clicking the mouse will
+																/*Handles input during the discovery phase of the game.															 Escape opens the game menu. Clicking the mouse will
 																 attack a location.*/								
 	{
 		if (SwinGame.KeyTyped(KeyCode.vk_ESCAPE)) {
@@ -26,7 +33,22 @@ static class DiscoveryController
 		}
 
 		if (SwinGame.MouseClicked(MouseButton.LeftButton)) {
-			DoAttack();
+
+			if (UtilityFunctions.IsMouseInRectangle (hintsBtnLeft, hintsBtnTop, hintsBtnWidth, hintsBtnHeight))
+			{
+				List<int> hints = GameController.ComputerPlayer.getHint();
+				Console.WriteLine (hints[0]);
+				Console.WriteLine (hints[1]);
+
+				hintY = UtilityFunctions.FIELD_LEFT + hints[1] * (UtilityFunctions.CELL_WIDTH +UtilityFunctions. CELL_GAP);
+				hintX = UtilityFunctions.FIELD_TOP + hints[0] * (UtilityFunctions.CELL_HEIGHT + UtilityFunctions.CELL_GAP);
+
+				hasHint = true;
+			}
+			else
+			{
+				DoAttack ();
+			}
 		}
 	}
 
@@ -61,7 +83,11 @@ static class DiscoveryController
 		const int SHOTS_TOP = 157;									/*draw phase*/
 		const int HITS_TOP = 206;
 		const int SPLASH_TOP = 256;
-		SwinGame.DrawBitmap (GameResources.GameImage ("hints"), 700, 20);
+		SwinGame.DrawBitmap (GameResources.GameImage ("hints"), hintsBtnLeft, hintsBtnTop);
+		if (hasHint)
+		{
+			SwinGame.DrawRectangle (Color.Yellow, hintY, hintX, UtilityFunctions.CELL_WIDTH, UtilityFunctions.CELL_HEIGHT);
+		}
 
 		if ((SwinGame.KeyDown(KeyCode.vk_LSHIFT) | SwinGame.KeyDown(KeyCode.vk_RSHIFT)) & SwinGame.KeyDown(KeyCode.vk_c)) {
 			UtilityFunctions.DrawField(GameController.HumanPlayer.EnemyGrid, GameController.ComputerPlayer, true);
